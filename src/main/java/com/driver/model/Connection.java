@@ -1,3 +1,4 @@
+
 package com.driver.model;
 
 import javax.persistence.*;
@@ -15,6 +16,15 @@ public class Connection {
     @ManyToOne
     @JoinColumn
     private ServiceProvider serviceProvider;
+
+    public Connection() {
+    }
+
+    public Connection(int id, User user, ServiceProvider serviceProvider) {
+        this.id = id;
+        this.user = user;
+        this.serviceProvider = serviceProvider;
+    }
 
     public int getId() {
         return id;
